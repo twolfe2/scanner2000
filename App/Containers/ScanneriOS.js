@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, Dimensions, Alert } from 'react-native'
+import { View, Text, Alert } from 'react-native'
+import Dimensions from 'Dimensions';
 import { connect } from 'react-redux'
 import Actions from '../Actions/Creators'
 import { Actions as NavigationActions } from 'react-native-router-flux'
@@ -13,8 +14,8 @@ const previewStyle = {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    height: 300,
-    width: 300
+    height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width
   }
 }
 class ScanneriOS extends React.Component {
@@ -43,7 +44,7 @@ class ScanneriOS extends React.Component {
             ]
           )
       this.setState({ currBarcode: data.data })
-      console.log('data', data)
+      
       // clear the current barcode after 2 seconds so they can rescan
     }
   }
@@ -57,7 +58,6 @@ class ScanneriOS extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>ScanneriOS Container</Text>
         <Camera
           ref={(cam) => {
             this.camera = cam
@@ -66,8 +66,8 @@ class ScanneriOS extends React.Component {
           aspect={Camera.constants.Aspect.fill} 
           onBarCodeRead={this.onBarCodeRead}
           keepAwake
+          captureAudio={false}
           >
-           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
           </Camera>
       </View>
     )
