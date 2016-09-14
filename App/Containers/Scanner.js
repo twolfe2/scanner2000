@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Platform } from 'react-native'
+import { View, Text, Platform, Alert } from 'react-native'
 import { connect } from 'react-redux'
 import Actions from '../Actions/Creators'
 import { Actions as NavigationActions } from 'react-native-router-flux'
@@ -16,7 +16,9 @@ class Scanner extends React.Component {
   //   super(props)
   //   this.state = {}
   // }
-
+  componentDidMount () {
+    Alert.alert('Welcome to BarcodeScanner 2000!', 'Scan your products barcodes to get information about them.')
+  }
   render () {
     return (
       <View style={styles.container}>

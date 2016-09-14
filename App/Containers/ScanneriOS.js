@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Alert } from 'react-native'
+import { View, Text, Alert, StatusBar } from 'react-native'
 import Dimensions from 'Dimensions';
 import { connect } from 'react-redux'
 import Actions from '../Actions/Creators'
@@ -14,7 +14,7 @@ const previewStyle = {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').height + 2,
     width: Dimensions.get('window').width
   }
 }
@@ -26,10 +26,16 @@ class ScanneriOS extends React.Component {
 
     this.onBarCodeRead = this.onBarCodeRead.bind(this)
   }
+  componentWillMount () {
+  StatusBar.setHidden(true);
+  }
+
   onBarCodeRead (data) {
+    // Check to see if we already scanned the product
     if(data.data !== this.state.currBarcode) {
       let alertMessage = 'Product Not Found'
       let currProduct = null;
+      // check to see if the product is in our store
       this.props.upcs.forEach(product => {
         if(data.data === product.upc) {
           currProduct = product.product_name
@@ -59,14 +65,12 @@ class ScanneriOS extends React.Component {
     return (
       <View style={styles.container}>
         <Camera
-          ref={(cam) => {
-            this.camera = cam
-          }}
           style={previewStyle.preview}
           aspect={Camera.constants.Aspect.fill} 
           onBarCodeRead={this.onBarCodeRead}
           keepAwake
           captureAudio={false}
+          torchMode={Camera.constants.TorchMode.auto}
           >
           </Camera>
       </View>
