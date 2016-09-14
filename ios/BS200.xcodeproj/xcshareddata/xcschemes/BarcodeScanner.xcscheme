@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "BarcodeScanner.app"
-               BlueprintName = "BarcodeScanner"
-               ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+               BlueprintName = "BS200"
+               ReferencedContainer = "container:BS200.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BarcodeScannerTests.xctest"
-               BlueprintName = "BarcodeScannerTests"
-               ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+               BuildableName = "BS200.xctest"
+               BlueprintName = "BS200Tests"
+               ReferencedContainer = "container:BS200.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BarcodeScannerTests.xctest"
-               BlueprintName = "BarcodeScannerTests"
-               ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+               BuildableName = "BS200.xctest"
+               BlueprintName = "BS200Tests"
+               ReferencedContainer = "container:BS200.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,15 +58,15 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "BarcodeScanner.app"
-            BlueprintName = "BarcodeScanner"
-            ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+            BlueprintName = "BS200"
+            ReferencedContainer = "container:BS200.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BarcodeScanner.app"
-            BlueprintName = "BarcodeScanner"
-            ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+            BuildableName = "BS200.app"
+            BlueprintName = "BS200"
+            ReferencedContainer = "container:BS200.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,8 +100,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "BarcodeScanner.app"
-            BlueprintName = "BarcodeScanner"
-            ReferencedContainer = "container:BarcodeScanner.xcodeproj">
+            BlueprintName = "BS200"
+            ReferencedContainer = "container:BS200.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
