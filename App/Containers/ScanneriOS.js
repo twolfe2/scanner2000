@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, Alert, StatusBar } from 'react-native'
-import Dimensions from 'Dimensions';
+import { View, Text, Alert, StatusBar, Vibration } from 'react-native'
+import Dimensions from 'Dimensions'
 import { connect } from 'react-redux'
 import Actions from '../Actions/Creators'
 import { Actions as NavigationActions } from 'react-native-router-flux'
@@ -14,7 +14,7 @@ const previewStyle = {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    height: Dimensions.get('window').height + 2,
+    height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
   }
 }
@@ -30,14 +30,15 @@ class ScanneriOS extends React.Component {
   StatusBar.setHidden(true);
   }
 
-  onBarCodeRead (data) {
+  onBarCodeRead (e) {
     // Check to see if we already scanned the product
-    if(data.data !== this.state.currBarcode) {
+    if(e.data !== this.state.currBarcode) {
+      Vibration.vibrate()
       let alertMessage = 'Product Not Found'
       let currProduct = null;
       // check to see if the product is in our store
       this.props.upcs.forEach(product => {
-        if(data.data === product.upc) {
+        if(e.data === product.upc) {
           currProduct = product.product_name
           alertMessage = `You have scanned ${currProduct}`
         }
@@ -49,17 +50,11 @@ class ScanneriOS extends React.Component {
               {text: 'OK', onPress: () => this.setState({ currBarcode: '' })},
             ]
           )
-      this.setState({ currBarcode: data.data })
+      this.setState({ currBarcode: e.data })
       
       // clear the current barcode after 2 seconds so they can rescan
     }
   }
-  takePicture() {
-    this.camera.capture()
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
-  }
-
 
   render () {
     return (
