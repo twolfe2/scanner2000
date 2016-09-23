@@ -12,9 +12,13 @@ export const INITIAL_STATE = Immutable({
   ]
 })
 
+const addItem = (state, action) => 
+  state.merge({upcs: state.upcs.concat({product_name: action.product_name, upc: action.upc})})
+
 
 // map our types to our handlers
 const ACTION_HANDLERS = {
+  [Types.ADD_ITEM]: addItem
 }
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS)

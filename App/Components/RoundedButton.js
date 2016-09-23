@@ -28,7 +28,7 @@ export default class RoundedButton extends React.Component {
   render () {
     return (
       <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-        <Text style={styles.buttonText}>{this.getText()}</Text>
+        <Text style={styles.buttonText}>{this.props.text}</Text>
       </TouchableOpacity>
     )
   }

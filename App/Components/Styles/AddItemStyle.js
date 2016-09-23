@@ -4,8 +4,7 @@ import { Colors, Metrics, ApplicationStyles } from '../../Themes/'
 export default StyleSheet.create({
   container: {
     flex: 2,
-    marginTop: Metrics.navBarHeight,
-    backgroundColor: Colors.background
+    paddingTop: Metrics.titlePadding
   },
   text: {
     color: 'white'
