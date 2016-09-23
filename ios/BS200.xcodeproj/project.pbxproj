@@ -821,7 +821,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeScanner2000;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeScanner;
 				PRODUCT_NAME = BS200;
 				PROVISIONING_PROFILE = "";
 			};
@@ -850,7 +850,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeScanner2000;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeScanner;
 				PRODUCT_NAME = BS200;
 				PROVISIONING_PROFILE = "";
 			};
