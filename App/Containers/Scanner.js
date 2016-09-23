@@ -5,6 +5,7 @@ import Actions from '../Actions/Creators'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import ScanneriOS from './ScanneriOS'
 import ScannerAndroid from './ScannerAndroid'
+import AddUpc from './AddUpc'
 
 
 // Styles
@@ -23,7 +24,7 @@ class Scanner extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Scanner Container</Text>
-        {Platform.OS === 'ios' ? <ScanneriOS /> : <ScannerAndroid />}
+        <AddUpc />
       </View>
     )
   }
