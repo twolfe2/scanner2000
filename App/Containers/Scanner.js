@@ -17,9 +17,7 @@ class Scanner extends React.Component {
   //   super(props)
   //   this.state = {}
   // }
-  componentDidMount () {
-    Alert.alert('Welcome to BarcodeScanner 2000!', 'Scan your products barcodes to get information about them.')
-  }
+
   render () {
     return (
       <View style={styles.container}>
